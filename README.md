@@ -4,7 +4,7 @@
 ## 现状
 完成了传统视觉的识别方式，准确度80%
 
-<img width="250" src="docs/result-preview.png"/>
+<img width="500" src="docs/result-preview.png"/>
 
 ## 预计
 1. 添加使用神经网络的识别方式

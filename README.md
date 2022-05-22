@@ -1,5 +1,7 @@
 # mahjong_sol-recognition
-识别雀魂麻将桌上歪曲扭八的麻将牌
+识别雀魂麻将桌上歪曲扭八的麻将牌，目标是实现一个自动避铳机
+
+部分数据来源于：https://github.com/MaZhengKe/mahjong
 
 ## 现状
 完成了传统视觉的识别方式，准确度80%

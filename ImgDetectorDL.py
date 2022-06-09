@@ -11,14 +11,14 @@ class ImgDetectorDL:
     def __init__(self):
         self.device = 'cpu'
         self.model = ProtoNet.get_few_shot_encoder().to(self.device)
-        self.model.load_state_dict(torch.load('model_weights.pth'))
+        self.model.load_state_dict(torch.load('model3.pth'))
         self.model.eval()
 
         self.transform = transforms.Compose([
             transforms.ToPILImage(),
-            transforms.Resize((28, 28)),
+            transforms.Resize((40, 40)),
             transforms.ToTensor(),
-            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+            # transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
         ])
 
         # 计算proto
@@ -26,6 +26,7 @@ class ImgDetectorDL:
         self._calculate_prototypes()
 
     def detect(self, img):
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         y_pred = self.model(self.transform(img).unsqueeze(0).to(self.device))
         min_d = None
         min_key = None
@@ -44,6 +45,7 @@ class ImgDetectorDL:
             for imgf in os.listdir(path2):
                 path3 = path2 + '/' + imgf
                 img = cv2.imread(path3)
+                img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
                 if y_pred is None:
                     y_pred = self.model(self.transform(img).unsqueeze(0).to(self.device))
                 else:

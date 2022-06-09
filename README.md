@@ -10,10 +10,13 @@ Prototypical Networks实现参考：https://github.com/oscarknagg/few-shot
 
 <img width="500" src="docs/result-preview.png"/>
 
-使用ProtoNet网络对麻将牌进行分类，实际表现...
+使用ProtoNet网络对麻将牌进行分类，实际表现...感觉不太行
 
 <img width="500" src="docs/result-protonet.png"/>
 
+原来是cv2读图片颜色通道是BGR的，我训练时dataloader读图片颜色通道是RGB的。改了一下感觉还行
+
+<img width="500" src="docs/result-protonet-update.png"/>
 
 ## 预计
 1. 添加使用神经网络的识别方式

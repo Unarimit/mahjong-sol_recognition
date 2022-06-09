@@ -14,7 +14,7 @@ Prototypical Networks实现参考：https://github.com/oscarknagg/few-shot
 
 <img width="500" src="docs/result-protonet.png"/>
 
-原来是cv2读图片颜色通道是BGR的，我训练时dataloader读图片颜色通道是RGB的。改了一下感觉还行
+原来是cv2读图片颜色通道是BGR的，我训练时dataloader读图片颜色通道是RGB的。改了一下感觉还行，主要问题还是在万字牌上
 
 <img width="500" src="docs/result-protonet-update.png"/>
 
